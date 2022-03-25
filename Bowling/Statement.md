@@ -64,7 +64,7 @@ Example Output:
 <<[[N]] lines:>> Each line contains 10 integers separated by a single space representing the cumulative score for each frame of that game
 
 # Constraints
-2 <= [[N]] <= 100
+1 <= [[N]] <= 10
 
 # No Strikes or Spares
 1
