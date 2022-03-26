@@ -50,7 +50,9 @@ X => Strike
 
 Example Input:
 
-`X X 9 - 7 / - 1 8 1 - - 9 / X X 7 -`
+Each frame is separated by a space:
+
+`X X 9- 7/ -1 81 -- 9/ X X7-`
 
 Example Output:
 `29 48 57 67 68 77 77 97 124 141`
@@ -58,7 +60,7 @@ Example Output:
 
 # Input description
 <<Line 1:>> An integer [[N]] specifying the number of games to score
-<<Next [[N]] lines:>> A string containing the result of each ball rolled over the course of 10 frames
+<<Next [[N]] lines:>> A string containing 10 frames each separated by a space
 
 # Output description
 <<[[N]] lines:>> Each line contains 10 integers separated by a single space representing the cumulative score for each frame of that game
@@ -68,23 +70,23 @@ Example Output:
 
 # No Strikes or Spares
 1
-3 2 7 1 2 3 4 4 5 - 1 - 1 1 1 5 1 6 7 -
+32 71 23 44 5- 1- 11 15 16 7-
 
 5 13 18 26 31 32 34 40 47 54
 
 # Validator 1
 1
-5 1 4 3 8 - 7 2 6 - 5 1 6 1 6 1 5 2 9 -
+51 43 8- 72 6- 51 61 61 52 9-
 
 6 13 21 30 36 42 49 56 63 72
 
 # Spares
 5
-3 2 7 / 6 / 3 / 1 1 9 / 1 - 1 / 2 / 5 -
-- / 5 - 5 2 5 2 7 2 7 1 1 / 5 1 3 / 3 / -
-7 / - / 5 / 7 2 7 / 2 2 6 / - 7 7 / - -
-4 4 1 / 2 / - / - 9 8 1 2 / 1 2 7 / 5 / 6
-1 / 1 / 5 / 2 / 3 / 5 / 5 / - / 5 / 1 6
+32 7/ 6/ 3/ 11 9/ 1- 1/ 2/ 5-
+-/ 5- 52 52 72 71 1/ 51 3/ 3/-
+7/ -/ 5/ 72 7/ 22 6/ -7 7/ --
+44 1/ 2/ -/ -9 81 2/ 12 7/ 5/6
+1/ 1/ 5/ 2/ 3/ 5/ 5/ -/ 5/ 16
 
 5 21 34 45 47 58 59 71 86 91
 15 20 27 34 43 51 66 72 85 95
@@ -94,11 +96,11 @@ Example Output:
 
 # Validator 2
 5
-5 / 1 / 5 4 4 / 7 2 4 / 5 1 6 1 6 1 5 2
-3 - 6 / 7 / 6 - 3 / 3 / 3 / 8 / 7 2 - / 6
-- / 1 / 5 / 9 - 3 6 3 / - / 7 / 1 / - 2
-7 / 7 - 5 1 5 / 1 / 3 6 3 / 7 / 3 / 5 2
-4 / 2 6 4 / 3 4 5 / 3 / 5 / 5 / 8 / 3 / 4
+5/ 1/ 54 4/ 72 4/ 51 61 61 52
+3- 6/ 7/ 6- 3/ 3/ 3/ 8/ 72 -/6
+-/ 1/ 5/ 9- 36 3/ -/ 7/ 1/ -2
+7/ 7- 51 5/ 1/ 36 3/ 7/ 3/ 52
+4/ 26 4/ 34 5/ 3/ 5/ 5/ 8/ 3/4
 
 11 26 35 52 61 76 82 89 96 103
 3 20 36 42 55 68 86 103 112 128
@@ -108,11 +110,11 @@ Example Output:
 
 # Strikes
 5
-X 5 / X 5 / 8 / 6 3 7 / - / 8 / 6 1
-3 - 6 / X 5 / 9 / X 3 / 7 / 6 / - / 9
-X X X 1 / 5 / X 8 / 3 6 3 / X X 6
-7 / 7 - X 7 / X 2 / X 8 / 9 - 6 1
-X 7 / 9 - 3 / 8 / 5 / X 5 2 X 5 / 8
+X 5/ X 5/ 8/ 63 7/ -/ 8/ 61
+3- 6/ X 5/ 9/ X 3/ 7/ 6/ -/9
+X X X 1/ 5/ X 8/ 36 3/ XX6
+7/ 7- X 7/ X 2/ X 8/ 9- 61
+X 7/ 9- 3/ 8/ 5/ X 52 X 5/8
 
 20 40 60 78 94 103 113 131 147 154
 3 23 43 62 82 102 119 135 145 164
@@ -122,11 +124,11 @@ X 7 / 9 - 3 / 8 / 5 / X 5 2 X 5 / 8
 
 # Validator 3
 5
-3 2 7 / 6 / X 2 / X 1 / 1 1 1 / X 1 /
-X X X X 8 / X 8 / 5 2 X 8 1
-7 / - / 5 / 7 2 7 / 2 2 6 / - 7 7 / - -
-X 8 / 1 / X 1 - X - 9 8 1 2 / 1 2
-1 / 1 / 5 / 2 / 3 / 5 / 5 / X X 8 / X
+32 7/ 6/ X 2/ X 1/ 11 1/ X 1/
+X X X X 8/ X 8/ 52 X 81
+7/ -/ 5/ 72 7/ 22 6/ -7 7/ --
+X 8/ 1/ X 1- X -9 81 2/ 12
+1/ 1/ 5/ 2/ 3/ 5/ 5/ X X 8/X
 
 5 21 41 61 81 101 112 114 134 154
 30 60 88 108 128 148 163 170 189 198
@@ -136,11 +138,11 @@ X 8 / 1 / X 1 - X - 9 8 1 2 / 1 2
 
 # Strikes and Spares
 5
-3 / X 7 / X X X X X X X X 1
-X X X X X - / X 4 / X 4 / 8
-X X X - / X X X X X 8 / 5
-X X 7 / X X X X X - / - / 6
-X X X X X X X X X 2 / X
+3/ X 7/ X X X X X X XX1
+X X X X X -/ X 4/ X 4/8
+X X X -/ X X X X X 8/5
+X X 7/ X X X X X -/ -/6
+X X X X X X X X X 2/ X
 
 20 40 60 90 120 150 180 210 240 261
 30 60 90 110 130 150 170 190 210 228
@@ -151,11 +153,11 @@ X X X X X X X X X 2 / X
 # Validator 4
 
 5
-X X X X X X - / X 1 / 8 / X
-X X 3 / X X X X X X X X X
+X X X X X X -/ X 1/ 8/X
+X X 3/ X X X X X X X X X
 X X X X X X X X X X X X
-X X X - / X X X X X X X X
-X X X X X X X X X X - /
+X X X -/ X X X X X X X X
+X X X X X X X X X X-/
 
 30 60 90 120 140 160 180 200 218 238
 23 43 63 93 123 153 183 213 243 273
@@ -164,9 +166,7 @@ X X X X X X X X X X - /
 30 60 90 120 150 180 210 240 260 280
 
 # Solution 
-
 using System;
-using System.Collections.Generic;
 
 class Program
 {
@@ -251,7 +251,6 @@ class Program
         return frames;
     }
 }
-
 
 # Generator
 
